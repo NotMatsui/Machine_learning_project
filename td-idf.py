@@ -99,7 +99,7 @@ best_vectorizer = best_model.named_steps["tfidf"]
 best_clf = best_model.named_steps["clf"]
 
 feature_names = np.array(best_vectorizer.get_feature_names_out())
-coefs = best_clf.coef_
+coefs = best_clf.coef_[0]
 
 top_neg_indices = np.argsort(coefs)[:15]
 top_pos_indices = np.argsort(coefs)[-15:][::-1]
